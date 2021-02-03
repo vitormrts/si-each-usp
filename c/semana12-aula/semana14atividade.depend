@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1605712517 source:c:\users\lorena\desktop\vitor\aed\semana14atividade\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1605721001 source:c:\users\pichau\desktop\vitor\usp\aed\semana14atividade\main.c
+	<stdio.h>
+	<stdlib.h>
+

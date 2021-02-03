@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1598739221 source:c:\users\pichau\desktop\vitor\usp\aed\semana2atividade\main.c
+	<stdio.h>
+	<stdlib.h>
+
