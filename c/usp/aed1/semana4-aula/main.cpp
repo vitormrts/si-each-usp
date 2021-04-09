@@ -15,7 +15,7 @@ typedef struct {
 
 // Inicilializa a lista ligada
 void inicializarListaLigada(LISTA *l) {
-    // Posição do índice disponível
+    // Posiï¿½ï¿½o do ï¿½ndice disponï¿½vel
     for (int i = 0; i < MAX-1; i++) l->A[i].prox = i + 1;
 
     l->dispo = 0;
@@ -66,7 +66,7 @@ int buscaSeqOrd(int ch, LISTA l, int *ant) {
     else return -1;
 }
 
-// Retira o 1º elemento disponível e retorna a sua posição
+// Retira o 1ï¿½ elemento disponï¿½vel e retorna a sua posiï¿½ï¿½o
 int obterNo (LISTA *l) {
     int resultado = l->dispo;
 
@@ -75,16 +75,16 @@ int obterNo (LISTA *l) {
     return resultado;
 }
 
-// Devolve um elemento para a lista de disponíveis
+// Devolve um elemento para a lista de disponï¿½veis
 int devolverNo (LISTA *l, int j) {
-    // O próximo elemento de j será o anterior disponível
+    // O prï¿½ximo elemento de j serï¿½ o anterior disponï¿½vel
     l->A[j].prox = l->dispo;
 
     // j assume a posicao de disponivel
     l->dispo = j;
 }
 
-// Insere um elemento numa lista ordenada (sem duplicação)
+// Insere um elemento numa lista ordenada (sem duplicaï¿½ï¿½o)
 int inserirElemListaOrd(LISTA *l, int ch) {
 
     int i, ant;
@@ -147,7 +147,7 @@ void trocar(LISTA* l) {
         i = l->A[i].prox;
     }
 
-    if (fim == -1) return -1;
+    if (fim == -1) return(-1);
 
     int aux = l->A[l->inicio].chave;
 

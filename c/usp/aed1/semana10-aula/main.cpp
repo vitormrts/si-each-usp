@@ -9,21 +9,20 @@ typedef struct estrutura {
 
 
 
-// inicializa a árvore
+// inicializa a ï¿½rvore
 void inicializarArvore(NO* *raiz) {
     *raiz = NULL;
 }
 
-// verifica se a arvore está vazia
+// verifica se a arvore estï¿½ vazia
 int arvoreVazia(NO* raiz) {
     if (!raiz) return 1;
     else return 0;
 }
 
-// inserir nó
+// inserir nï¿½
 void inserirNo(NO* *raiz, int ch) {
     if (!raiz) {
-                printf("a");
         (*raiz) = (NO*) malloc(sizeof(NO));
         (*raiz)->chave = ch;
         (*raiz)->dir = NULL;
@@ -52,9 +51,9 @@ void inserirNo(NO* *raiz, int ch) {
 }*/
 
 
-/*Escrever uma função que, dado um elemento p garantidamente existente em uma árvore binária,
- crie um novo filho esquerdo com o valor de chave correspondente à chave do pai (p) mais a chave do filho direito, se houver.
- Se já houver filho esquerdo, nada deve ser executado.*/
+/*Escrever uma funï¿½ï¿½o que, dado um elemento p garantidamente existente em uma ï¿½rvore binï¿½ria,
+ crie um novo filho esquerdo com o valor de chave correspondente ï¿½ chave do pai (p) mais a chave do filho direito, se houver.
+ Se jï¿½ houver filho esquerdo, nada deve ser executado.*/
 void novoEsquerdo(NO* p) {
 
 }
