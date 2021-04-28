@@ -1,0 +1,28 @@
+void salasComChaves(VERTICE *g, int i, NO* *sala) {
+    if (g[i].temChave) {
+        NO* novo = (NO*) malloc(sizeof(NO));
+
+        novo->vertice = i;
+
+        if (!(*sala)) {
+            novo->prox = NULL;
+        } else {
+            novo->prox = *sala;
+        }
+
+        (*sala) = novo;
+    }
+
+    g[i].flag = 1;
+
+    NO *p = g[i].inicio;
+
+    while (p) {
+        if (g[p->vertice].flag == 0) {
+            salasComChaves(g, p->vertice, sala);
+        }
+        p = p->prox;
+    }
+
+    g[i].flag = 2;
+}

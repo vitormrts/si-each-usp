@@ -55,6 +55,4 @@ void rotacaoEsquerdaDireita(NO* *pai) {
 int main() {
     NO* raiz;
     inicializarArvore(&raiz)
-
-    
 }

@@ -10,9 +10,8 @@ typedef struct estrutura {
 void inicializarLista(NO* *cabeca) {
     *cabeca = (NO*) malloc(sizeof(NO));
     NO* p = *cabeca;
-    // O prox elemento de NÓ cabeca será ele mesmo
+    // O prox elemento de Nï¿½ cabeca serï¿½ ele mesmo
     p->prox = *cabeca;
-
 }
 
 // Exibe a lista
@@ -27,7 +26,7 @@ void exibirLista(NO* cabeca) {
 
 // 1o. elemento da lista
 NO* primeiroElem(NO* cabeca) {
-    // Se o prox de cabeca for cabeca, ele nao tem elementos, pois aponta para cabeca (que é apenas um "auxiliar")
+    // Se o prox de cabeca for cabeca, ele nao tem elementos, pois aponta para cabeca (que ï¿½ apenas um "auxiliar")
     if (cabeca->prox == cabeca) return NULL;
     else return cabeca->prox;
 }
@@ -65,7 +64,7 @@ int inserirElemListaOrd(NO* *cabeca, int ch) {
 
     // Faz a busca sequencial
     novo = buscaSeqOrd(ch, *cabeca, &ant);
-    // Se novo é diferente de NULL, ele existe, entao retorne -1
+    // Se novo ï¿½ diferente de NULL, ele existe, entao retorne -1
     if (novo != NULL) return -1;
     novo = (NO*) malloc(sizeof(NO));
 

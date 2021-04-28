@@ -1,0 +1,43 @@
+void adjacencia2incidencia(VERTICE* g, int n) {
+    int i;
+    int j = 0;
+    int k = 0;
+
+    int vertice;
+
+    ADJACENCIA* adjacencia;
+    ADJACENCIA* incidente;
+
+    VERTICE novoGrafo[n];
+    for (i = 0; i < n; i++) { // grafo auxiliar
+        novoGrafo[i].cabeca = NULL;
+    }
+
+    while (j < n) {
+        adjacencia = g[j].cabeca; // NO cabeca da lista
+        
+        while (adjacencia) {
+            incidente = adjacencia;
+
+            vertice = adjacencia->vertice;
+            adjacencia = adjacencia->prox;
+
+            incidente->vertice = j;
+            
+            if (novoGrafo[vertice].cabeca) { // lista ja possui elementos
+                incidente->prox = novoGrafo[vertice].cabeca;
+            } else { // primeira insercao
+                incidente->prox = NULL;
+            }
+            
+            novoGrafo[vertice].cabeca = incidente;
+        }
+
+        j++;
+    }
+
+    while (k < n) { // trocando os ponteiros
+        g[k].cabeca = novoGrafo[k].cabeca;
+        k++;
+    }
+}
