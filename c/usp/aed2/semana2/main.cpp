@@ -32,9 +32,9 @@ VERTICE *criarGrafo(int vertices) {
         grafo[i].temChave = false;
     }
 
+    grafo[4].temChave = true;
     grafo[1].temChave = true;
-    grafo[3].temChave = true;
-    grafo[2].temChave = true;
+    grafo[0].temChave = true;
 
     return grafo;
 }
@@ -206,9 +206,30 @@ void buscarChave(VERTICE *g, int i, int *resp) {
 // ex semanal => encontrar todas salas alcancaveis (que possuam chaves) a partir de i
 void salasComChaves(VERTICE *g, int i, NO* *sala) {
     if (g[i].temChave) {
+        // abaixo nos inserimos o elemento no final da lista
+        // NO* p = *sala;
+        // NO* ant = NULL;
+
+        // NO* novo = (NO*) malloc(sizeof(NO));
+        // novo->vertice = i;
+        // novo->prox = NULL;
+
+        // while (p) {
+        //     ant = p;
+        //     p = p->prox;
+        // }
+
+        // if (!ant) 
+        //     *sala = novo;
+        // else 
+        //     ant->prox = novo;
+
+        // abaixo nos utilizamos o NO cabeca para insercao na lista
+
         NO* novo = (NO*) malloc(sizeof(NO));
 
         novo->vertice = i;
+        
 
         if (!(*sala)) {
             novo->prox = NULL;
@@ -232,7 +253,6 @@ void salasComChaves(VERTICE *g, int i, NO* *sala) {
 
     g[i].flag = 2;
 }
-
 int main() {
     VERTICE *grafo = criarGrafo(5);
 
