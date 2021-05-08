@@ -63,7 +63,7 @@ int excluirDaFila(FILA *fila) {
         }
         return chave;
     }
-    return -1;
+    return 0;
 }
 
 void imprimirFila(FILA *fila) {
@@ -183,12 +183,16 @@ int custoChaveMaisProxima(VERTICE* g, int i) {
             v = p->vertice;
 
             if (g[v].flag == 0) {
-                if (j != -1 && cont == 1) 
+                // if (cont == 1) 
                     total += j;
+                    printf("%d ", total);
                 
-                if (g[v].temChave) 
-                    return total + p->peso;
-                
+                if (g[v].temChave) {
+                    // printf("v%d(%d) ", v, j);
+                    printf("%d ", p->peso);
+                     return total + p->peso;
+                }
+                    
                 g[v].flag = 1;
                 inserirNaFila(&f, v);
                 inserirNaFila(&pesos, p->peso);
