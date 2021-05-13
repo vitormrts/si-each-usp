@@ -153,32 +153,6 @@ void trocar(LISTA* l) {
 
     l->A[l->inicio].chave = l->A[fim].chave;
     l->A[fim].chave = aux;
-
-    /*int tam = tamanho(l);
-
-    if (tam > 2) {
-        int i = l->inicio;
-        int ant;
-
-        while (l->A[i].prox != -1) {
-            ant = i;
-            i = l->A[i].prox;
-        }
-
-        l->A[ant].prox = l->inicio;
-
-        l->A[i].prox = l->A[l->inicio].prox;
-        l->A[l->inicio].prox = -1;
-
-        int fimChave = l->A[i].chave;
-        int inicioChave = l->A[l->inicio].chave;
-
-        l->A[i].chave = inicioChave;
-        l->A[l->inicio].chave = fimChave;
-
-        l->inicio = i;*/
-
-
 }
 
 // Sobrescreve o sucessor de uma chave em uma posicao i
@@ -197,6 +171,8 @@ void sobrescrever(LISTA* l, int i) {
 
     }
 }
+
+
 int main()
 {
     LISTA l;

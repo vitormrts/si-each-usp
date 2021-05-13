@@ -55,7 +55,7 @@ bool textHasWord(char *str) {
 
 int main() 
 {
-    char teste[6] = "o";
+    char teste[10] = "notebooks";
     bool a = textHasWord(teste);
     printf("%d", a);
 }

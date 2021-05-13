@@ -141,58 +141,7 @@ int excluirElemListaOrd(LISTA* l, int ch) {
     return 1;
 }
 
-// Destruicao da lista
-void destruirLista(LISTA* l) {
-    NO* atual;
-    NO* prox;
-    atual = l->inicio;
 
-    while (atual != NULL) {
-        prox = atual->prox;
-        free(atual);
-        atual = prox;
-    }
-    l->inicio = NULL;
-}
-
-
-// Retorna o numero de vezes que x aparece na lista
-int ocorrencias(LISTA* l, int x) {
-    NO* pos = l->inicio;
-    int contador = 0;
-
-    while (pos) {
-        if (pos->chave == x) contador++;
-        pos = pos->prox;
-    }
-
-    return contador;
-}
-
-// Verifica se duas listas dinamicas l1 e l2 sao identicas
-int identicas(LISTA *l1, LISTA *l2) {
-    int tam1 = tamanho(l1);
-    int tam2 = tamanho(l2);
-
-    if (tam1 == tam2) {
-        NO* pos1;
-        NO* pos2;
-
-        pos1 = l1->inicio;
-        pos2 = l2->inicio;
-
-        while (pos1 && pos2) {
-            if (pos1->chave != pos2->chave) return -1;
-
-            pos1 = pos1->prox;
-            pos2 = pos2->prox;
-        }
-    }
-
-    else return -1;
-
-    return 1;
-}
 int main()
 {
     LISTA l1;
