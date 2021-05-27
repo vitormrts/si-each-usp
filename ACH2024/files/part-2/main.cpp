@@ -6,9 +6,11 @@
 #define MAX 200
 
 struct registro {
-    char nroUsp[8];
+    char nroUsp[9];
     char nome[21];
-    int nota;
+    // int nota;
+    int idade;
+    int valido;
 };
 
 void imprime(struct registro vetor_alunos[], int nroRegs) {
@@ -18,7 +20,8 @@ void imprime(struct registro vetor_alunos[], int nroRegs) {
     for (i = 0; i < nroRegs; i++) {
         printf("\n%7s ", vetor_alunos[i].nroUsp);
         printf("%20s ", vetor_alunos[i].nome);
-        printf("%d", vetor_alunos[i].nota);
+        printf("%d ", vetor_alunos[i].idade);
+        printf("%d", vetor_alunos[i].valido);
     }
     printf("\n===================================\n");
 }
@@ -29,9 +32,10 @@ void variavelParaFixo(char* pathEntrada) {
 
     int i;
     
-    char nroUsp[8];
+    char nroUsp[9];
     char nome[20];
-    int nota;
+    int idade;
+    int valido;
 
     struct registro alunos[MAX];
     struct registro aluno;
@@ -43,19 +47,24 @@ void variavelParaFixo(char* pathEntrada) {
         FILE *arqSaida = fopen("fixo.txt", "w+");
 
         while (!feof(arqEntrada)) {
+            // fscanf(arqEntrada, "%[^/]%*c/%[^/]%*c/%d/%d", nroUsp, nome, &idade, &valido);
             // fgets(aluno.nroUsp, 8, arqEntrada);
             // fgets(aluno.nome, 21, arqEntrada);
             fscanf(arqEntrada, "%[^/]%*c", nroUsp);
             fscanf(arqEntrada, "%[^/]%*c", nome); // le ate `/` e pula esse caracter
-            fscanf(arqEntrada, "%d\n", &nota);
+            fscanf(arqEntrada, "%d/", &idade);
+            fscanf(arqEntrada, "%d\n", &valido);
             
             strcpy(alunos[i].nroUsp, nroUsp);
             strcpy(alunos[i].nome, nome);
-            alunos[i].nota = nota;
+            alunos[i].idade = idade;
+            alunos[i].valido = valido;
 
             // printf("%s", alunos[i].nroUsp);
             // printf("     %s", alunos[i].nome);
-            // printf("     %d\n", alunos[i].nota);
+            // printf(" %d", alunos[i].idade);
+            // printf("     %d\n", alunos[i].valido);
+            
             i++;
         } 
 
@@ -77,7 +86,8 @@ void imprimeArquivoFixo(char* pathSaida, int nroRegs) {
         for (i = 0; i < nroRegs; i++) {
             printf("\n%s ", vetor_alunos[i].nroUsp);
             printf("%s ", vetor_alunos[i].nome);
-            printf("%d", vetor_alunos[i].nota);
+            printf("%d ", vetor_alunos[i].idade);
+            printf("%d", vetor_alunos[i].valido);
         }
     }
 }

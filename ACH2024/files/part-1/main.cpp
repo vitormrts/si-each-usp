@@ -24,7 +24,7 @@ char* concat(char* str, char c, int i){
 }
 
 bool textHasWord(char *str) {
-    FILE *file = fopen("exercicio.txt", "rb");
+    FILE *file = fopen("ex.txt", "rb");
     bool resp = false;
     if (!file) {
         printf("Erro ao abrir o arquivo.\n"); // erro ao abrir
