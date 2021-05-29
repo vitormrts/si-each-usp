@@ -139,7 +139,7 @@ int main() {
 
     FILE *arq = fopen(path, "r+"); // ler e escrever
     if (arq) {
-        atualizarRegistros(arq, 0, 1);
+        atualizarRegistros(arq, 9, 10);
     }
 
     imprimeArquivoFixo(path, 10);
