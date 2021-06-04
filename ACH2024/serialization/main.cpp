@@ -200,7 +200,7 @@ int main() {
     REGISTRO *r3 = criarRegistro(2, 3, 9);
     REGISTRO *r4 = criarRegistro(3, 1, 2);
     REGISTRO *r5 = criarRegistro(2, 4, 1);
-    REGISTRO *r6 = criarRegistro(6, 3, 10);
+    REGISTRO *r6 = criarRegistro(6, 3, 10); 
     REGISTRO *r7 = criarRegistro(3, 6, 10);
     REGISTRO *r8 = criarRegistro(0, 9, 17);
     REGISTRO* regs[8] = {r1, r2, r3, r4, r5, r6, r7, r8};
