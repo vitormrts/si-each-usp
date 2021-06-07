@@ -1,2 +1,2 @@
-# data-structures
-A repository with the incredible data structures used in programming. 
+# SI EACH USP
+Repository with some of the academic disciplines from the curriculum of the Information Systems course at EACH USP.
