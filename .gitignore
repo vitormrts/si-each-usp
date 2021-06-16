@@ -2,3 +2,4 @@ eps/
 python/
 .mypy_cache/
 anotacoes/
+**/main
