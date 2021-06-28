@@ -80,7 +80,6 @@ typedef struct {
 	int custo;
 } REGISTRO_ARQUIVO;
 
-
 typedef struct {
     int v1;
     int v2;
@@ -88,36 +87,10 @@ typedef struct {
 } REGISTRO_ESTATICO;
 
 typedef struct {
-    REGISTRO_ESTATICO A[MAX];
-    int tam;
-} LISTA_ESTATICA;
+    REGISTRO_ESTATICO A[MAX][MAX];
+} MATRIZ;
 
-void inicializarTabela(LISTA_ESTATICA* l) {
-    for (int i = 0; i < MAX - 1; i++) {
-        l->A[i].v1 = -1;
-        l->A[i].v2 = -1;
-        l->A[i].nroRegistro = -1;
-    };
-
-    l->tam = 0;
-}
-
-void inserirIndice(LISTA_ESTATICA* l, int v1, int v2, int nroRegistro) {
-    l->A[l->tam].v1 = v1;
-    l->A[l->tam].v2 = v2;
-    l->A[l->tam].nroRegistro = nroRegistro;
-
-    l->tam++;
-}
-
-void imprimirTabela(LISTA_ESTATICA *l) {
-    for (int i = 0; i < l->tam - 1; i++) {
-        printf("index: %d\nv1: %d\nv2: %d", l->A[i].nroRegistro, l->A[i].v1, l->A[i].v2);
-        printf("\n================\n");
-    }
-}
-
-LISTA_ESTATICA* criacaoDeIndice(char* path, LISTA_ESTATICA* l) {
+MATRIZ criacaoDeIndice(char* path, MATRIZ m) {
     FILE *arq = fopen(path, "rb");
     if (!arq) {
         printf("ERRO: Nao foi possivel abrir o arquivo...\n");
@@ -125,19 +98,17 @@ LISTA_ESTATICA* criacaoDeIndice(char* path, LISTA_ESTATICA* l) {
         REGISTRO_ARQUIVO r;
         int prox = 0;
         while (fread(&r, sizeof(REGISTRO_ARQUIVO), 1, arq)) {
-            inserirIndice(l, r.v1, r.v2, prox);
+            m.A[r.v1][r.v2].v1 = r.v1;
+            m.A[r.v1][r.v2].v2 = r.v2;
+            m.A[r.v1][r.v2].nroRegistro = prox;
             prox++;
         }
     }
-
-    return l;
+    return m;
 }
 
 int main() {
-    LISTA_ESTATICA* lista;
-    inicializarTabela(lista);
-
     char* path = "exemplo.txt";
-    lista = criacaoDeIndice(path, lista);
-    imprimirTabela(lista);
+    MATRIZ m;
+    m = criacaoDeIndice(path, m);
 }   
