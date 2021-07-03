@@ -95,5 +95,51 @@ Algumas entradas sao:
 - Registrador de instrucao => opcode e modo de enderecamento da instrucao
 - Flag => determinar estado do processador e das saidas das operacoes anteriores da ALU
 - Sinais de controle do barramento do controle => parte do barramento do sistema, fornece sinais p a UC
+
+Algumas saidas sao:
 - Sinais de controle do processador => podem mover os dados de um registrador a outro ou ativar funcoes especificas da ALU
 - Sinais de controle para barramento de controle =>podem ser sinais de controle para emmoria ou para modulos de E/S
+
+## Implementacao por hardware
+Combinacao de circuito combinatorio, com sinais de entrada logicos que se transformam em um conjunto de sinais logicos de saida.
+
+## Exercicios
+
+### 1
+Um programa possui varios ciclos de instrucao. A sequencia desse ciclos nao é necessariamente igual a sequencia escrita de instrucoes que o programa possui (por conta da exitencia de condicionais). A execucao real de instrucoes segueuma sequencia de tempo de instrucoes.
+
+### 2
+As instrucoes possuem micro-operacoes. Elas são operacoes elementares da CPU.
+
+### 3.
+Executa as micro-operacoes na sequencia adequada e gera os sinais de controle que implicam na execucao de cada uma dessas micro-operacoes.
+
+### 4.
+- 1. Definir elementos básicos do processador
+- 2. Descrever quais sao as micro-operacoes que o processador pode executar
+- 3. Determinar as funcoes que a unidade de controle deve realizar para fazer com que as micro-operacoes sejam executadas
+
+### 5.
+Sequenciamento => processador percorre uma serie de microoperacoes na sequencia correta
+Execucao => cada micro operacao deve ser executada
+
+### 6.
+Algumas entradas sao:
+- Clock => unidade para manter o tempo
+- Registrador de instrucao => opcode e modo de enderecamento da instrucao
+- Flag => determinar estado do processador e das saidas das operacoes anteriores da ALU
+- Sinais de controle do barramento do controle => parte do barramento do sistema, fornece sinais p a UC
+
+Algumas saidas sao:
+- Sinais de controle do processador => podem mover os dados de um registrador a outro ou ativar funcoes especificas da ALU
+- Sinais de controle para barramento de controle => podem ser sinais de controle para emmoria ou para modulos de E/S
+
+### 7.
+- Os que ativam a ALU
+- Os que ativam caminho de dados
+- Os que sao sinais do barramento externo ou outra interface externa
+
+### 8.
+A implementacao por hardware é uma combinacao de circuito combinatorio, com sinais de entrada logicos que se transformam em um conjunto de sinais logicos de saida.
+
+Uma implementacao microprogramada de uma unidade de controle a lógica é especificado por um microprograma que consiste numa sequencia de instrucoes simples.
